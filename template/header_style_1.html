@@ -1,0 +1,294 @@
+<nav id="sidebar" class="sidebar-wrapper">
+	<div class="sidebar-content">
+		<div id="toggle-sidebar">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div class="sidebar-brand">
+			<a href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">
+			<img src="{LOGO_THEME}" width="85px" height="auto">
+				<h1 class="logo-text">{SITENAME}</h1>
+			</a>
+		</div>
+		<div class="sidebar-menu">
+			<ul>
+				<li class="header-menu">
+					<span>{L_QUICK_LINKS}</span>
+				</li>
+				<li class="sidebar-dropdown">
+					<a href="#">
+					   <i class="mdi mdi-comment-text"></i> 
+						<span>Post</span>
+					</a>
+					<div class="sidebar-submenu">
+						<ul>
+							<!-- EVENT navbar_header_quick_links_before -->
+							<!-- IF S_DISPLAY_SEARCH -->
+								<li class="separator"></li>
+								<!-- IF S_REGISTERED_USER -->
+									<li>
+										<a href="{U_SEARCH_SELF}" role="menuitem">
+											<span>{L_SEARCH_SELF}</span>
+										</a>
+									</li>
+								<!-- ENDIF -->
+								<!-- IF S_USER_LOGGED_IN -->
+									<li>
+										<a href="{U_SEARCH_NEW}" role="menuitem">
+											<span>{L_SEARCH_NEW}</span>
+										</a>
+									</li>
+								<!-- ENDIF -->
+								<!-- IF S_LOAD_UNREADS -->
+									<li>
+										<a href="{U_SEARCH_UNREAD}" role="menuitem">
+											<span>{L_SEARCH_UNREAD}</span>
+										</a>
+									</li>
+								<!-- ENDIF -->
+									<li>
+										<a href="{U_SEARCH_UNANSWERED}" role="menuitem">
+											<span>{L_SEARCH_UNANSWERED}</span>
+										</a>
+									</li>
+									<li>
+										<a href="{U_SEARCH_ACTIVE_TOPICS}" role="menuitem">
+											<span>{L_SEARCH_ACTIVE_TOPICS}</span>
+										</a>
+									</li>
+									<li class="separator"></li>
+									<li>
+										<a href="{U_SEARCH}" role="menuitem">
+											<span>{L_SEARCH}</span>
+										</a>
+									</li>
+							<!-- ENDIF -->
+							<!-- EVENT navbar_header_quick_links_after -->
+						</ul>
+					</div>
+				</li>				
+				<!-- IF S_DISPLAY_PM -->
+					<li class="rightside" data-skip-responsive="true">
+						<a href="{U_PRIVATEMSGS}" role="menuitem">
+							<i class="icon fa-inbox fa-fw" aria-hidden="true"></i><span>{L_PRIVATE_MESSAGES} </span><strong class="badge<!-- IF not PRIVATE_MESSAGE_COUNT --> hidden<!-- ENDIF -->">{PRIVATE_MESSAGE_COUNT}</strong>
+						</a>
+					</li>
+				<!-- ENDIF -->
+				<!-- IF not S_IS_BOT and (S_DISPLAY_MEMBERLIST or U_TEAM) -->
+				<!-- IF S_DISPLAY_MEMBERLIST -->
+					<li>
+						<a href="{U_MEMBERLIST}" role="menuitem">
+							<i class="mdi mdi-account-star"></i><span>{L_MEMBERLIST}</span>
+						</a>
+					</li>
+				<!-- ENDIF -->
+				<!-- IF U_TEAM -->
+					<li>
+						<a href="{U_TEAM}" role="menuitem">
+							<i class="mdi mdi-account-group"></i><span>{L_THE_TEAM}</span>
+						</a>
+					</li>
+				<!-- ENDIF -->				
+				<!-- ENDIF -->			
+				<!-- IF N_LINKONE -->
+						<li>
+						<a href="{LINKONE}" <!-- IF N_LINK_O --> target="_blank" <!-- ENDIF --> role="menuitem">
+							<i class="mdi {I_LINKONE}"></i><span>{N_LINKONE}</span>
+						</a>
+					</li>			
+				<!-- ENDIF -->
+				<!-- IF N_LINKTWO -->
+						<li>
+						<a href="{LINKTWO}" <!-- IF N_LINK_T --> target="_blank" <!-- ENDIF --> role="menuitem">
+							<i class="mdi {I_LINKTWO}"></i><span>{N_LINKTWO}</span>
+						</a>
+					</li>			
+				<!-- ENDIF -->
+				<!-- IF N_LINKTHREE -->
+						<li>
+						<a href="{LINKTHREE}" <!-- IF N_LINK_TH --> target="_blank" <!-- ENDIF --> role="menuitem">
+							<i class="mdi {I_LINKTHREE}"></i><span>{N_LINKTHREE}</span>
+						</a>
+					</li>			
+				<!-- ENDIF -->
+				<!-- IF N_LINKFOUR -->
+						<li>
+						<a href="{LINKFOUR}" <!-- IF N_LINK_FO --> target="_blank" <!-- ENDIF --> role="menuitem">
+							<i class="mdi {I_LINKFOUR}"></i><span>{N_LINKFOUR}</span>
+						</a>
+					</li>			
+				<!-- ENDIF -->
+				<!-- IF N_LINKFIVE -->
+						<li>
+						<a href="{LINKFIVE}" <!-- IF N_LINK_FI --> target="_blank" <!-- ENDIF --> role="menuitem">
+							<i class="mdi {I_LINKFIVE}"></i><span>{N_LINKFIVE}</span>
+						</a>
+					</li>			
+				<!-- ENDIF -->				
+				<li class="header-menu">
+					<span>setting</span>
+				</li>
+				<!-- EVENT overall_header_navigation_prepend -->
+				<li <!-- IF not S_USER_LOGGED_IN -->data-skip-responsive="true"<!-- ELSE -->data-last-responsive="true"<!-- ENDIF -->>
+					<a href="{U_FAQ}" rel="help" title="{L_FAQ_EXPLAIN}" role="menuitem">
+						<i class="mdi mdi-help-circle"></i></i><span>{L_FAQ}</span>
+					</a>
+				</li>
+				<!-- EVENT overall_header_navigation_append -->
+				<!-- IF U_ACP -->
+					<li data-last-responsive="true">
+						<a href="{U_ACP}" title="{L_ACP}" role="menuitem">
+							<i class="mdi mdi-settings"></i><span>{L_ACP_SHORT}</span>
+						</a>
+					</li>
+				<!-- ENDIF -->
+				<!-- IF U_MCP -->
+				<li data-last-responsive="true">
+					<a href="{U_MCP}" title="{L_MCP}" role="menuitem">
+						<i class="mdi mdi-gavel"></i></i><span>{L_MCP_SHORT}</span>
+					</a>
+				</li>
+				<!-- ENDIF -->										
+				<li class="header-menu">
+					<span>more</span>
+				</li>		
+				<!-- EVENT overall_footer_teamlink_before -->
+				<!-- EVENT overall_footer_teamlink_after -->
+				<!-- IF U_CONTACT_US -->
+					<li class="rightside" data-last-responsive="true">
+						<a href="{U_CONTACT_US}" role="menuitem">
+							<i class="mdi mdi-email-variant"></i><span>{L_CONTACT_US}</span>
+						</a>
+					</li>
+				<!-- ENDIF -->				
+				<!-- IF not S_IS_BOT -->
+					<li class="rightside">
+						<a href="{U_DELETE_COOKIES}" data-ajax="true" data-refresh="true" role="menuitem">
+							<i class="mdi mdi-delete"></i><span>{L_DELETE_COOKIES}</span>
+						</a>
+					</li>
+				<!-- ENDIF -->						
+				<!-- EVENT overall_footer_timezone_before -->
+				<!-- EVENT overall_footer_timezone_after -->									
+			</ul>
+		</div>
+		<!-- sidebar-menu  -->
+	</div>
+	<!-- sidebar-content  -->
+</nav>
+<div class="page-content">
+	<div id="header" class="menu-style1">
+		<div class="header-style">
+			<!-- EVENT overall_header_headerbar_before -->		
+			<div class="top-header">			
+				<div class="right-header">					
+					<div class="profile-header">
+							<a href="{U_SEARCH}" role="menuitem" class="mobile-icon fo-small">
+									<i class="mdi mdi-magnify"></i>
+							</a>					
+						<!-- IF S_REGISTERED_USER -->
+						<!-- EVENT navbar_header_user_profile_prepend -->						
+						<!-- IF S_DISPLAY_PM -->
+							<div class="rightside foo-small" data-skip-responsive="true">
+								<a href="{U_PRIVATEMSGS}" role="menuitem">
+									  <i class="mdi mdi-forum-outline"></i> <strong class="badge<!-- IF not PRIVATE_MESSAGE_COUNT --> hidden<!-- ENDIF -->">{PRIVATE_MESSAGE_COUNT}</strong>
+								</a>
+							</div>
+						<!-- ENDIF -->
+						<!-- IF S_NOTIFICATIONS_DISPLAY -->
+								<a href="{U_VIEW_ALL_NOTIFICATIONS}" class="mobile-icon foo-small">
+									<i class="mdi mdi-bell-ring-outline"></i><strong class="badge<!-- IF not NOTIFICATIONS_COUNT --> hidden<!-- ENDIF -->">{NOTIFICATIONS_COUNT}</strong>
+								</a>
+							<div class="rightside-noti rightside dis-mobile" data-skip-responsive="true" onclick="Funsearchc()">
+								<a  id="notification_list_button" class="dropdown-trigger">
+									<i class="mdi mdi-bell-ring-outline"></i><strong class="badge<!-- IF not NOTIFICATIONS_COUNT --> hidden<!-- ENDIF -->">{NOTIFICATIONS_COUNT}</strong>
+								</a>
+								<div class="noti">
+								<!-- INCLUDE notification_dropdown.html -->
+								</div>
+							</div>
+						<!-- ENDIF -->						
+						<a href="{U_VIEW_ALL_NOTIFICATIONS}" class="mobile-icon ">
+							<i class="mdi mdi-account-outline"></i></a>
+						<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem" class="mobile-icon pad-right">
+							<i class="mdi mdi-power"></i>
+						</a>							
+						<div id="username_logged_in" class="dis-mobile rightside <!-- IF CURRENT_USER_AVATAR --> no-bulletin<!-- ENDIF -->" data-skip-responsive="true">
+							<!-- EVENT navbar_header_username_prepend -->
+							<div class="header-style-profilo ">
+								<a href="{U_PROFILE}" class="header-avatar dropdown-trigger"><!-- IF CURRENT_USER_AVATAR -->{CURRENT_USER_AVATAR} <!-- ENDIF --> {CURRENT_USERNAME_SIMPLE}</a>
+									<div class="pointer"><div class="pointer-inner"></div></div>
+									<ul class="style-profilo" role="menu">
+									<div class="pointer"><div class="pointer-inner"></div></div>
+										<!-- IF U_RESTORE_PERMISSIONS -->
+											<li>
+												<a href="{U_RESTORE_PERMISSIONS}">
+													<i class="icon fa-refresh fa-fw" aria-hidden="true"></i><span>{L_RESTORE_PERMISSIONS}</span>
+												</a>
+											</li>
+										<!-- ENDIF -->
+									<!-- EVENT navbar_header_profile_list_before -->
+										<li>
+											<a href="{U_PROFILE}" title="{L_PROFILE}" role="menuitem">
+												<i class="mdi mdi-settings-outline"></i><span>{L_PROFILE}</span>
+											</a>
+										</li>
+										<li>
+											<a href="{U_USER_PROFILE}" title="{L_READ_PROFILE}" role="menuitem">
+												<i class="mdi mdi-account-outline "></i><span>{L_READ_PROFILE}</span>
+											</a>
+										</li>
+										<!-- EVENT navbar_header_profile_list_after -->
+										<li>
+											<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">
+												<i class="mdi mdi-power"></i><span>{L_LOGIN_LOGOUT}</span>
+											</a>
+										</li>
+									</ul>
+							</div>
+							<!-- EVENT navbar_header_username_append -->
+						</div>				
+						<!-- EVENT navbar_header_user_profile_append -->
+						<!-- ELSE -->
+						<div class="rightside inline"  data-skip-responsive="true">
+							<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x" role="menuitem">
+								<i class="mdi mdi-login-variant"></i> 
+							</a>
+						</div>
+						<!-- IF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+							<div class="rightside inline" data-skip-responsive="true">
+								<a href="{U_REGISTER}" role="menuitem">
+									<i class="mdi mdi-account-multiple-plus"></i> 
+								</a>
+							</div>
+						<!-- ENDIF -->
+						<!-- EVENT navbar_header_logged_out_content -->
+					<!-- ENDIF -->
+					</div>
+				</div>
+				<div class="left-header">
+					<div class="search">
+						<!-- EVENT overall_header_searchbox_before -->
+						<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+						<div id="search-box" class="search-box search-header search-box-sty" role="search">
+							<form action="{U_SEARCH}" method="get" id="search">
+							<fieldset>
+								<button class="button button-search" type="submit" title="{L_SEARCH}">
+									<i class="mdi mdi-magnify"></i><span class="sr-only">{L_SEARCH}</span>
+								</button>							
+								<input name="keywords" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search tiny" size="20" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
+								{S_SEARCH_HIDDEN_FIELDS}
+							</fieldset>
+							</form>
+						</div>
+						<!-- ENDIF -->
+						<!-- EVENT overall_header_searchbox_after -->
+					</div>
+				</div>
+			</div>
+
+			<!-- EVENT overall_header_navbar_before -->
+		</div>
+	</div>
+	<!-- EVENT overall_header_page_body_before -->

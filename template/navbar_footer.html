@@ -1,0 +1,30 @@
+<div class="navbar" role="navigation" >
+	<div class="inner">
+
+
+	<ul id="nav-breadcrumbs" class="nav-breadcrumbs linklist navlinks" role="menubar">
+		<!-- DEFINE $MICRODATA = ' itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""' -->
+		<!-- EVENT overall_header_breadcrumbs_before -->
+		<li class="breadcrumbs">
+			<!-- IF U_SITE_HOME -->
+				<span class="crumb" {$MICRODATA}><a href="{U_SITE_HOME}" itemprop="url" data-navbar-reference="home"><i class="icon fa-home fa-fw" aria-hidden="true"></i><span itemprop="title">{L_SITE_HOME}</span></a></span>
+			<!-- ENDIF -->
+			<!-- EVENT overall_header_breadcrumb_prepend -->
+				<span class="crumb" {$MICRODATA}><a href="{U_INDEX}" itemprop="url" accesskey="h" data-navbar-reference="index"><!-- IF not U_SITE_HOME --><i class="icon fa-home fa-fw"></i><!-- ENDIF --><span itemprop="title">{L_INDEX}</span></a></span>
+
+			<!-- BEGIN navlinks -->
+				<!-- EVENT overall_header_navlink_prepend -->
+				<span class="crumb" {$MICRODATA}<!-- IF navlinks.MICRODATA --> {navlinks.MICRODATA}<!-- ENDIF -->><a href="{navlinks.U_VIEW_FORUM}" itemprop="url"><span itemprop="title">{navlinks.FORUM_NAME}</span></a></span>
+				<!-- EVENT overall_header_navlink_append -->
+			<!-- END navlinks -->
+			<!-- EVENT overall_header_breadcrumb_append -->
+		</li>
+		<!-- EVENT overall_header_breadcrumbs_after -->
+
+		<li class="time-footer">
+<p class="{S_CONTENT_FLOW_END} responsive-center time<!-- IF S_USER_LOGGED_IN --> rightside<!-- ENDIF -->"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF -->  </p>
+<!-- IF S_USER_LOGGED_IN --><p class="responsive-center time">{CURRENT_TIME} \  </p><!-- ENDIF --> </li>
+	</ul>
+
+	</div>
+</div>

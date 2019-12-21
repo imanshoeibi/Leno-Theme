@@ -1,0 +1,299 @@
+		<!-- EVENT overall_footer_content_after -->
+
+
+<!-- IF  ADS_TOP_FOOTER == 'on' -->
+<div class="ads ads-banner-footer">{ADS_CODE}</div>
+<!-- ENDIF -->
+	</div>
+
+<!-- IF SELECT_DEMO == 3 and SIDEBAR -->
+	</div>
+	</div>
+<!-- ENDIF -->
+<!-- EVENT overall_footer_page_body_after -->
+
+<!-- IF FOOTER -->
+<footer class="with-footer">
+	<div class="sticky-stopper"></div>
+	<div id="page-footer" class="page-footer" role="contentinfo">
+	<div class="top-footer">
+	<!-- INCLUDE navbar_footer.html -->
+	</div>
+		<div class="body-footer">
+			<div class="footer-col">
+				<span class="title-fo">link</span>
+				<ul>
+				<!-- IF U_WATCH_FORUM_LINK and not S_IS_BOT -->
+				<li data-last-responsive="true">
+					<a href="{U_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" data-ajax="toggle_link" data-toggle-class="icon <!-- IF S_WATCHING_FORUM -->fa-check-square-o<!-- ELSE -->fa-square-o<!-- ENDIF --> fa-fw" data-toggle-text="{S_WATCH_FORUM_TOGGLE}" data-toggle-url="{U_WATCH_FORUM_TOGGLE}">
+						<i class="icon <!-- IF S_WATCHING_FORUM -->fa-square-o<!-- ELSE -->fa-check-square-o<!-- ENDIF --> fa-fw" aria-hidden="true"></i><span>{S_WATCH_FORUM_TITLE}</span>
+					</a>
+				</li>
+				<!-- ENDIF -->
+				<!-- IF not S_IS_BOT -->
+					<li class="rightside">
+						<a href="{U_DELETE_COOKIES}" data-ajax="true" data-refresh="true" role="menuitem">
+							<span>{L_DELETE_COOKIES}</span>
+						</a>
+					</li>
+					<!-- IF S_DISPLAY_MEMBERLIST -->
+					<li class="rightside" data-last-responsive="true">
+						<a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}" role="menuitem">
+							<span>{L_MEMBERLIST}</span>
+						</a>
+					</li>
+					<!-- ENDIF -->
+					<!-- ENDIF -->
+					<!-- EVENT overall_footer_teamlink_before -->
+					<!-- IF U_TEAM -->
+					<li class="rightside" data-last-responsive="true">
+						<a href="{U_TEAM}" role="menuitem">
+							<span>{L_THE_TEAM}</span>
+						</a>
+					</li>
+					<!-- ENDIF -->
+					<!-- EVENT overall_footer_teamlink_after -->
+					<!-- IF U_CONTACT_US -->
+					<li class="rightside" data-last-responsive="true">
+						<a href="{U_CONTACT_US}" role="menuitem">
+							<span>{L_CONTACT_US}</span>
+						</a>
+					</li>
+					<!-- ENDIF -->
+					<li>
+						<a class="footer-link" href="{{ U_PRIVACY }}" title="{{ lang('PRIVACY_LINK') }}" role="menuitem">
+							<span class="footer-link-text">{{ lang('PRIVACY_LINK') }}</span>
+						</a>
+					</li>
+					<li>
+						<a class="footer-link" href="{{ U_TERMS_USE }}" title="{{ lang('TERMS_LINK') }}" role="menuitem">
+							<span class="footer-link-text">{{ lang('TERMS_LINK') }}</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<span class="title-fo">custom link</span>
+				<ul>
+					<!-- IF N_F_LINKONE -->
+					<li>
+						<a class="footer-link" href="{FLINKONE}" <!-- IF N_F_LINK_O --> target="_blank" <!-- ENDIF --> role="menuitem">
+							<span>{N_F_LINKONE}</span>
+						</a>
+					</li>
+					<!-- ENDIF -->
+					<!-- IF N_F_LINKTWO -->
+					<li>
+						<a class="footer-link" href="{FLINKTWO}" <!-- IF N_F_LINK_T --> target="_blank" <!-- ENDIF --> role="menuitem">
+							<span>{N_F_LINKTWO}</span>
+						</a>
+					</li>
+					<!-- ENDIF -->
+					<!-- IF N_F_LINKTHREE -->
+					<li>
+						<a class="footer-link" href="{FLINKTHREE}" <!-- IF N_F_LINK_TH --> target="_blank" <!-- ENDIF --> role="menuitem">
+							<span>{N_F_LINKTHREE}</span>
+						</a>
+					</li>
+					<!-- ENDIF -->
+					<!-- IF N_F_LINKFOUR -->
+					<li>
+						<a class="footer-link" href="{FLINKFOUR}" <!-- IF N_F_LINK_FO --> target="_blank" <!-- ENDIF --> role="menuitem">
+							<span>{N_F_LINKFOUR}</span>
+						</a>
+					</li>
+					<!-- ENDIF -->
+					<!-- IF N_F_LINKFIVE -->
+					<li>
+						<a class="footer-link" href="{FLINKFIVE}" <!-- IF N_F_LINK_FI --> target="_blank" <!-- ENDIF --> role="menuitem">
+							<span>{N_F_LINKFIVE}</span>
+						</a>
+					</li>
+					<!-- ENDIF -->
+				</ul>
+			</div>
+			<div class="footer-col-3">
+				<!-- IF FOOTER_TITLE --><span class="title-fo">{FOOTER_TITLE}</span><!-- ENDIF -->
+				<!-- IF FOOTER_TEXT --><span class="footer-text">{FOOTER_TEXT}</span><!-- ENDIF -->
+				<div class="social">
+				<!-- IF  LINKINSTAGRAM --><a href="{LINKINSTAGRAM}" ><i class="mdi mdi-instagram"></i></a><!-- ENDIF -->
+				<!-- IF  LINKLINKEDIN --><a href="{LINKLINKEDIN}" ><i class="mdi mdi-linkedin"></i></a><!-- ENDIF -->
+				<!-- IF  LINKTWITTER --><a href="{LINKTWITTER}" ><i class="mdi mdi-twitter"></i></a><!-- ENDIF -->
+				<!-- IF  LINKYOUTUBE --><a href="{LINKYOUTUBE}" ><i class="mdi mdi-youtube"></i></a><!-- ENDIF -->
+				<!-- IF  LINKFACEBOOK --><a href="{LINKFACEBOOK}" ><i class="mdi mdi-facebook"></i></a><!-- ENDIF -->
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<!-- EVENT overall_footer_copyright_prepend -->
+			<p class="footer-row">
+				<span class="footer-copyright">{{ CREDIT_LINE }}</span><span> .Design by <a href="http://beutheme.com" target="_blank">beutheme</a></span><!-- EVENT overall_footer_timezone_before --><span class="rightside"> | {S_TIMEZONE}</span><!-- EVENT overall_footer_timezone_after -->
+			</p>
+			<!-- IF TRANSLATION_INFO -->
+			<p class="footer-row">
+				<span class="footer-copyright">{{ TRANSLATION_INFO }}</span>
+			</p>
+			<!-- ENDIF -->
+			<!-- EVENT overall_footer_copyright_append -->
+			<!-- IF DEBUG_OUTPUT -->
+			<p class="footer-row">
+				<span class="footer-info">{{ DEBUG_OUTPUT }}</span>
+			</p>
+			<!-- ENDIF -->
+			<!-- IF U_ACP -->
+			<p class="footer-row">
+				<a class="footer-link text-strong" href="{{ U_ACP }}">{{ lang('ACP') }}</a>
+			</p>
+			<!-- ENDIF -->
+		</div>
+		<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="{L_AJAX_ERROR_TITLE}" data-ajax-error-text="{L_AJAX_ERROR_TEXT}" data-ajax-error-text-abort="{L_AJAX_ERROR_TEXT_ABORT}" data-ajax-error-text-timeout="{L_AJAX_ERROR_TEXT_TIMEOUT}" data-ajax-error-text-parsererror="{L_AJAX_ERROR_TEXT_PARSERERROR}">
+			<div id="darken" class="darken">&nbsp;</div>
+		</div>
+		<div id="phpbb_alert" class="phpbb_alert" data-l-err="{L_ERROR}" data-l-timeout-processing-req="{L_TIMEOUT_PROCESSING_REQ}">
+			<a href="#" class="alert_close">
+				<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+			</a>
+			<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+		</div>
+		<div id="phpbb_confirm" class="phpbb_alert">
+			<a href="#" class="alert_close">
+				<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+			</a>
+			<div class="alert_text"></div>
+		</div>
+	</div>
+</footer>
+<!-- ENDIF -->
+
+<!-- IF not FOOTER -->
+<div class="fasele">
+	<!-- INCLUDE navbar_footer.html -->
+
+</div>
+<div id="page-footer" class="page-footer" role="contentinfo">
+
+	<div class="copyright">
+		<!-- EVENT overall_footer_copyright_prepend -->
+<span class="footer-copyright">{{ CREDIT_LINE }}</span><span> .Design by <a href="http://beutheme.com" target="_blank">beutheme</a></span>
+		<!-- EVENT overall_footer_copyright_append -->
+
+	</div>
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="{L_AJAX_ERROR_TITLE}" data-ajax-error-text="{L_AJAX_ERROR_TEXT}" data-ajax-error-text-abort="{L_AJAX_ERROR_TEXT_ABORT}" data-ajax-error-text-timeout="{L_AJAX_ERROR_TEXT_TIMEOUT}" data-ajax-error-text-parsererror="{L_AJAX_ERROR_TEXT_PARSERERROR}">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="{L_ERROR}" data-l-timeout-processing-req="{L_TIMEOUT_PROCESSING_REQ}">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+</div>
+<!-- ENDIF -->
+</div>
+<!-- IF  SELECT_DEMO == 1 -->	</div><!-- ENDIF -->
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
+</div>
+<script type="text/javascript" src="{T_JQUERY_LINK}"></script>
+<!-- IF S_ALLOW_CDN --><script type="text/javascript">window.jQuery || document.write('\x3Cscript src="{T_ASSETS_PATH}/javascript/jquery.min.js?assets_version={T_ASSETS_VERSION}">\x3C/script>');</script><!-- ENDIF -->
+<script type="text/javascript" src="{T_ASSETS_PATH}/javascript/core.js?assets_version={T_ASSETS_VERSION}"></script>
+<!-- INCLUDEJS forum_fn.js -->
+<!-- INCLUDEJS ajax.js -->
+<!-- IF S_ALLOW_CDN -->
+	<script type="text/javascript">
+		(function($){
+			var $fa_cdn = $('head').find('link[rel="stylesheet"]').first(),
+				$span = $('<span class="fa" style="display:none"></span>').appendTo('body');
+			if ($span.css('fontFamily') !== 'FontAwesome' ) {
+				$fa_cdn.after('<link href="{T_ASSETS_PATH}/css/font-awesome.min.css" rel="stylesheet">');
+				$fa_cdn.remove();
+			}
+			$span.remove();
+		})(jQuery);
+	</script>
+<!-- ENDIF -->
+<!-- IF S_COOKIE_NOTICE -->
+<script src="{T_ASSETS_PATH}/cookieconsent/cookieconsent.min.js?assets_version={T_ASSETS_VERSION}"></script>
+<script>
+		window.addEventListener("load", function(){
+			window.cookieconsent.initialise({
+				"palette": {
+					"popup": {
+						"background": "#0F538A"
+					},
+					"button": {
+						"background": "#E5E5E5"
+					}
+				},
+				"theme": "classic",
+				"content": {
+					"message": "{LA_COOKIE_CONSENT_MSG}",
+					"dismiss": "{LA_COOKIE_CONSENT_OK}",
+					"link": "{LA_COOKIE_CONSENT_INFO}",
+					"href": "{LA_COOKIE_CONSENT_HREF}"
+				}
+			})});
+</script>
+<!-- ENDIF -->
+<!-- IF SELECT_DEMO == 3 and FIX_MENU-->
+<script>
+$(document).ready(function() {
+    var header = $(".header-style");
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 300) {
+            header.addClass("header-style3-fix");
+        } else {
+            header.removeClass("header-style3-fix");
+        }
+    });
+});
+</script>
+<!-- ENDIF -->
+<!-- IF SELECT_DEMO == 3 and USE_SLIDER-->
+<script>
+$(document).ready(function() {
+	var slides = document.querySelectorAll('#slides .slide');
+	var currentSlide = 0;
+	var slideInterval = setInterval(nextSlide,5000);
+
+	function nextSlide(){
+		slides[currentSlide].className = 'slide';
+		currentSlide = (currentSlide+1)%slides.length;
+		slides[currentSlide].className = 'slide showing';
+	};
+	});
+</script>
+<!-- ENDIF -->
+<!-- IF SELECT_DEMO == 3 and SIDEBAR -->
+<script type="text/javascript" src="{T_THEME_PATH}/js/sticky-sidebar.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+var sidebar = new StickySidebar('#sidebar', {        containerSelector: '#main-content',
+        innerWrapperSelector: '.sidebar__inner',
+        topSpacing: 60,
+        bottomSpacing: 0});
+});
+</script>
+<!-- ENDIF -->
+<script type="text/javascript">
+$(document).ready(function() {
+    var $ = document.querySelector.bind(document);
+    var ps = new PerfectScrollbar('#cssmenu .dropdown-contents');
+    var ps = new PerfectScrollbar('.dropdown-contents');
+});
+</script>
+<!-- EVENT overall_footer_after -->
+<!-- IF S_PLUPLOAD --><!-- INCLUDE plupload.html --><!-- ENDIF -->
+{$SCRIPTS}
+<!-- EVENT overall_footer_body_after -->
+</body>
+</html>

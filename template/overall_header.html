@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+{META}
+<title><!-- IF UNREAD_NOTIFICATIONS_COUNT -->({UNREAD_NOTIFICATIONS_COUNT}) <!-- ENDIF --><!-- IF not S_VIEWTOPIC and not S_VIEWFORUM -->{SITENAME} - <!-- ENDIF --><!-- IF S_IN_MCP -->{L_MCP} - <!-- ELSEIF S_IN_UCP -->{L_UCP} - <!-- ENDIF -->{PAGE_TITLE}<!-- IF S_VIEWTOPIC or S_VIEWFORUM --> - {SITENAME}<!-- ENDIF --></title>
+
+<!-- IF S_ENABLE_FEEDS -->
+	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{{ path('phpbb_feed_index') }}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{{ path('phpbb_feed_news') }}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{{ path('phpbb_feed_forums') }}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{{ path('phpbb_feed_topics') }}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{{ path('phpbb_feed_topics_active') }}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{{ path('phpbb_feed_forum', { forum_id : S_FORUM_ID } ) }}"><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{{ path('phpbb_feed_topic', { topic_id : S_TOPIC_ID } ) }}"><!-- ENDIF -->
+	<!-- EVENT overall_header_feeds -->
+<!-- ENDIF -->
+
+<!-- IF U_CANONICAL -->
+	<link rel="canonical" href="{U_CANONICAL}">
+<!-- ENDIF -->
+
+<!-- IF FAVICON -->
+	<link rel="icon" href="{FAVICON}" />
+<!-- ENDIF -->
+
+<!--
+	phpBB style name: leno
+	Based on style:   leno (this is the default phpBB3 style)
+	Modified by:
+-->
+
+<!-- IF S_ALLOW_CDN -->
+<script>
+	WebFontConfig = {
+		google: {
+			families: ['Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese']
+		}
+	};
+
+	(function(d) {
+		var wf = d.createElement('script'), s = d.scripts[0];
+		wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+		wf.async = true;
+		s.parentNode.insertBefore(wf, s);
+	})(document);
+</script>
+<!-- ENDIF -->
+<link href="{T_FONT_AWESOME_LINK}" rel="stylesheet">
+<link href="{T_STYLESHEET_LINK}" rel="stylesheet">
+<link href="{T_STYLESHEET_LANG_LINK}" rel="stylesheet">
+<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+	<link href="{T_THEME_PATH}/bidi.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+<!-- ENDIF -->
+<!-- IF S_PLUPLOAD -->
+	<link href="{T_THEME_PATH}/plupload.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+<!-- ENDIF -->
+<!-- IF S_COOKIE_NOTICE -->
+	<link href="{T_ASSETS_PATH}/cookieconsent/cookieconsent.min.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+<!-- ENDIF -->
+<!--[if lte IE 9]>
+	<link href="{T_THEME_PATH}/tweaks.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
+<![endif]-->
+<!-- IF FONT_NAME -->{FONT}<!-- ENDIF -->
+<link href="{T_THEME_PATH}/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="{T_THEME_PATH}/themestyle.css" rel="stylesheet" type="text/css" />
+<link href="{T_THEME_PATH}/font.css" rel="stylesheet" type="text/css" />
+<link href="{T_THEME_PATH}/css/menu-style.css" rel="stylesheet" type="text/css" />
+<link href="{T_THEME_PATH}/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="//cdn.materialdesignicons.com/2.4.85/css/materialdesignicons.min.css">
+
+<!-- IF not MODE_THEME and SELECT_DEMO == 3 --><link href="{T_THEME_PATH}/css/dark.css" rel="stylesheet" type="text/css" /><!-- ENDIF -->
+<!-- IF BACKGROUND_FULL and not MODE_THEME and SELECT_DEMO == 3--><link href="{T_THEME_PATH}/fullpage.css" rel="stylesheet" type="text/css" /><!-- ENDIF -->
+<link href="{T_THEME_PATH}/custom-themes.css" rel="stylesheet" type="text/css" />
+<link href="{T_THEME_PATH}/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
+<link href="{T_THEME_PATH}/custom.css" rel="stylesheet" type="text/css" />
+<link href="{T_THEME_PATH}/themify-icons.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{T_THEME_PATH}/js/jquery.min.js"></script>
+<script type="text/javascript" src="{T_THEME_PATH}/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="{T_THEME_PATH}/js/custom.js"></script>
+<script type="text/javascript" src="{T_THEME_PATH}/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="{T_THEME_PATH}/js/perfect-scrollbar.js"></script>
+
+
+<script>
+$(window).load(function() {
+	$("#loading").fadeOut(500);
+})
+</script>
+
+<!-- IF SELECT_DEMO == 3 or SELECT_DEMO == 2 -->
+<script type="text/javascript" src="{T_THEME_PATH}/js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="{T_THEME_PATH}/js/script-menu.js"></script>
+<!-- ENDIF -->
+
+<!-- EVENT overall_header_head_append -->
+{$STYLESHEETS}
+<!-- EVENT overall_header_stylesheets_after -->
+
+<style type="text/css" >
+
+<!-- IF CUSTMIZER_COLOR -->
+dl.faq dt ,a.button , span.button , input[type=reset], input[type=submit] ,.them-statistics i ,.chiller-theme .sidebar-wrapper ul li:hover a i, .chiller-theme .sidebar-wrapper .sidebar-dropdown .sidebar-submenu li a:hover:before, .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu:focus+span, .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown.active a i ,#cssmenu > ul > li.has-sub:hover > a::after ,#cssmenu > ul > li:hover > a ,#cssmenu ul ul li:hover > a, #cssmenu ul ul li a:hover ,a:hover ,fieldset.fields1 dl.pmlist dd.recipients a ,.logo-text ,.header-style-profilo ul.style-profilo li a:hover ,input[type=button] ,#cssmenu > ul > li.has-sub:hover > a::after ,.menu-style1 .right-header .icon-search:hover , a.header-avatar:hover span ,fieldset.polls dd.resultbar a ,.nav-up, .nav-down ,.breadcrumbs a:hover span ,.action-bar .button:hover ,.action-bar .button:hover .icon,.arrow-left:hover .icon,.arrow-right:hover .icon,.jumpbox .dropdown-contents a:hover,div.online-list p a {
+	color:#{COLOR_THEME} !important
+}
+#cssmenu > ul > li.has-sub:hover > a::after {
+	border-color:#{COLOR_THEME} !important
+}
+<!-- IF MODE_THEME -->
+.right-login , .right-register ,button, .has-profile .post-buttons a ,#loading ,.topicreview .postbody .post-buttons a ,.postprofile .profile-contact a ,.pagination li.active span{
+	background-color:#{COLOR_THEME} !important
+}
+<!-- ENDIF -->
+.tabs .activetab > a, .tabs .activetab > a:hover , .navigation .active-subsection a,.chiller-theme .sidebar-wrapper .sidebar-menu ul li:hover>a {
+	border-color:#{COLOR_THEME} !important
+}
+<!-- IF not MODE_THEME -->
+button, .topicreview .postbody .post-buttons a, .postprofile .profile-contact a, .pagination li.active span, fieldset.submit-buttons input, input[type=submit], a.button2, input.button2, input.button3,.has-profile .post-buttons a{
+	background-color:#{COLOR_THEME} !important;
+	color:#fff !important
+}
+a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover {
+	background-color:#{COLOR_THEME}cd !important;
+}
+<!-- ENDIF -->
+<!-- ENDIF -->
+
+<!-- IF CHANGEFONT and FONT_NAME -->
+body , .menu-stand , .top-header .col-right .rightside a ,.username-coloured ,.breadcrumbs span ,.search-header .inputbox , li.header dt, li.header dd, .forumbg .header a, .forabg .header a, th a ,.stat-block a ,.postbody h3 a ,.forumbg .header a,a.forumtitle ,a.lastsubject,.login-theme fieldset ,.login-theme label,.content p,fieldset.fields2 ,a.topictitle ,fieldset ,dl.faq ,.content .faq-title,.postbody div.content,.postbody p.author,a.button , span.button , input[type=reset], input[type=submit],#tz_select_date_suggest ,.dropdown-extended .header,#cssmenu ,.message-box textarea{
+	font-family: '{FONT_NAME}' !important;
+}
+<!-- ENDIF -->
+<!-- IF SELECT_DEMO == 3 and GRADIENT_COLOR-->
+<!-- IF USE_GRADIENT -->
+.img-header .upload-image {
+    background: -moz-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%);
+    background: -webkit-linear-gradient(left, #{FROM_COLOR}8a 1%,#{TO_COLOR}a8 100%);
+    background: linear-gradient(to right, #{FROM_COLOR}8a 1%,#{TO_COLOR}a8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{FROM_COLOR}8a', endColorstr='#{TO_COLOR}a8',GradientType=1 );
+}
+<!-- ELSE -->
+.img-header .upload-image {
+    background: -moz-linear-gradient(left, #fff0 1%, #fff0 100%);
+    background: -webkit-linear-gradient(left, #fff0 1%,#fff0 100%);
+    background: linear-gradient(to right, #fff0 1%,#fff0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff0', endColorstr='#fff0',GradientType=1 );
+}
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF SELECT_DEMO == 3 and GRADIENT_COLOR and USE_SLIDER and MODE_THEME-->
+<!-- IF USE_GRADIENT -->
+.slide:nth-of-type(1){
+	background: -webkit-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%) ,url({BACKGROUND}) !important ;
+	background: -moz-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%),url({BACKGROUND}) !important ;
+	background: -ms-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%),url({BACKGROUND}) !important;
+	background: -o-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%),url({BACKGROUND}) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{FROM_COLOR}8a', endColorstr='#{TO_COLOR}a8',GradientType=1 );
+}
+.slide:nth-of-type(2){
+	background: -webkit-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%) ,url({BACKGROUND2}) !important ;
+	background: -moz-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%),url({BACKGROUND2}) !important ;
+	background: -ms-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%),url({BACKGROUND2}) !important;
+	background: -o-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%),url({BACKGROUND2}) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{FROM_COLOR}8a', endColorstr='#{TO_COLOR}a8',GradientType=1 );
+}
+.slide:nth-of-type(3){
+	background: -webkit-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%) ,url({BACKGROUND3}) !important ;
+	background: -moz-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%),url({BACKGROUND3}) !important ;
+	background: -ms-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%),url({BACKGROUND3}) !important;
+	background: -o-linear-gradient(left, #{FROM_COLOR}8a 1%, #{TO_COLOR}a8 100%),url({BACKGROUND3}) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{FROM_COLOR}8a', endColorstr='#{TO_COLOR}a8',GradientType=1 );
+}
+<!-- ELSE -->
+.slide:nth-of-type(1){
+	background: -webkit-linear-gradient(left, #fff0 1%, #fff0 100%) ,url({BACKGROUND}) !important ;
+	background: -moz-linear-gradient(left, #fff0 1%, #fff0 100%),url({BACKGROUND}) !important ;
+	background: -ms-linear-gradient(left, #fff0 1%, #fff0 100%),url({BACKGROUND}) !important;
+	background: -o-linear-gradient(left, #fff0 1%, #fff0 100%),url({BACKGROUND}) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff0', endColorstr='#fff0',GradientType=1 );
+}
+.slide:nth-of-type(2){
+	background: -webkit-linear-gradient(left, #fff0 1%, #fff0 100%) ,url({BACKGROUND2}) !important ;
+	background: -moz-linear-gradient(left, #fff0 1%, #fff0 100%),url({BACKGROUND2}) !important ;
+	background: -ms-linear-gradient(left, #fff0 1%, #fff0 100%),url({BACKGROUND2}) !important;
+	background: -o-linear-gradient(left, #fff0 1%, #fff0 100%),url({BACKGROUND2}) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff0', endColorstr='#fff0',GradientType=1 );
+}
+.slide:nth-of-type(3){
+	background: -webkit-linear-gradient(left, #fff0 1%, #fff0 100%) ,url({BACKGROUND3}) !important ;
+	background: -moz-linear-gradient(left, #fff0 1%, #fff0 100%),url({BACKGROUND3}) !important ;
+	background: -ms-linear-gradient(left, #fff0 1%, #fff0 100%),url({BACKGROUND3}) !important;
+	background: -o-linear-gradient(left, #fff0 1%,#fff0 100%),url({BACKGROUND3}) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff0', endColorstr='#fff0',GradientType=1 );
+}
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF SELECT_DEMO == 3 and USE_SLIDER and not MODE_THEME-->
+
+.slide:nth-of-type(1){
+	background: url({BACKGROUND}) !important ;
+}
+.slide:nth-of-type(2){
+	background: url({BACKGROUND2}) !important ;
+}
+.slide:nth-of-type(3){
+	background: url({BACKGROUND3}) !important ;
+}
+<!-- ENDIF -->
+<!-- IF SELECT_DEMO == 3 and not GRADIENT_COLOR and USE_SLIDER and MODE_THEME-->
+.slide:nth-of-type(1){
+    background: -moz-linear-gradient(left, #e42e458f 1%, #7e79d65c 100%),url({BACKGROUND}) !important;
+    background: -webkit-linear-gradient(left, #e42e458f 1%,#7e79d65c 100%),url({BACKGROUND}) !important;
+    background: linear-gradient(to right, #e42e458f 1%,#7e79d65c 100%),url({BACKGROUND}) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e42e458f', endColorstr='#7e79d65c',GradientType=1 );
+}
+.slide:nth-of-type(2){
+    background: -moz-linear-gradient(left, #e42e458f 1%, #7e79d65c 100%),url({BACKGROUND2}) !important;
+    background: -webkit-linear-gradient(left, #e42e458f 1%,#7e79d65c 100%),url({BACKGROUND2}) !important;
+    background: linear-gradient(to right, #e42e458f 1%,#7e79d65c 100%),url({BACKGROUND2}) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e42e458f', endColorstr='#7e79d65c',GradientType=1 );
+}
+.slide:nth-of-type(3){
+    background: -moz-linear-gradient(left, #e42e458f 1%, #7e79d65c 100%),url({BACKGROUND3}) !important;
+    background: -webkit-linear-gradient(left, #e42e458f 1%,#7e79d65c 100%),url({BACKGROUND3}) !important;
+    background: linear-gradient(to right, #e42e458f 1%,#7e79d65c 100%),url({BACKGROUND3}) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e42e458f', endColorstr='#7e79d65c',GradientType=1 );
+}
+<!-- ENDIF -->
+<!-- IF SELECT_DEMO == 3 and not MODE_THEME-->
+.slide:nth-of-type(1){
+    background: url({BACKGROUND}) !important;
+}
+.slide:nth-of-type(2){
+    background-image:url({BACKGROUND2}) !important;
+}
+.slide:nth-of-type(3){
+    background-image: url({BACKGROUND3}) !important;
+}
+<!-- ENDIF -->
+<!-- IF SELECT_DEMO == 3 and not MODE_THEME and BACKGROUND_FULL -->
+.full_background .img-header {
+    background: -webkit-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND}) !important;
+    background: -moz-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND}) !important;
+    background: -ms-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND}) !important;
+    background: -o-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND}) !important;
+    background: linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND}) !important;
+	background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.full_background .slide:nth-of-type(1) {
+    background: -webkit-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND}) !important;
+    background: -moz-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND}) !important;
+    background: -ms-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND}) !important;
+    background: -o-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND}) !important;
+    background: linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND}) !important;
+}
+.full_background .slide:nth-of-type(2) {
+    background: -webkit-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)) ,url({BACKGROUND2}) !important;
+    background: -moz-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND2}) !important;
+    background: -ms-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND2}) !important;
+    background: -o-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND2}) !important;
+    background: linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40))url,url({BACKGROUND2}) !important;
+}
+.full_background .slide:nth-of-type(3) {
+    background: -webkit-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)) ,url({BACKGROUND3}) !important;
+    background: -moz-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND3}) !important;
+    background: -ms-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND3}) !important;
+    background: -o-linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND3}) !important;
+    background: linear-gradient(rgba(0, 130, 170, 0),rgb(24, 32, 40)),url({BACKGROUND3}) !important;
+}
+<!-- ENDIF -->
+</style>
+<script>
+function Funsearcha(){
+	$('.search-theme').addClass('show-search');
+	$('.body-search').addClass('show-body-search');
+}
+function Funsearchb(){
+	$('.search-theme').removeClass('show-search');
+	$('.body-search').removeClass('show-body-search');
+	$('.noti').removeClass('show-noti');
+}
+function Funsearchc(){
+	$('.noti').addClass('show-noti');
+	$('.body-search').addClass('show-body-search');
+}
+</script>
+</head>
+<body id="phpbb" class="nojs notouch section-{SCRIPT_NAME} {S_CONTENT_DIRECTION} {BODY_CLASS} <!-- IF BACKGROUND_FULL and not MODE_THEME --> full_background with-opacity<!-- ENDIF -->">
+	<!-- IF USE_LOADING -->
+	<div id="loading" class="load-wrapp">
+		<div id="loading-center" class="load-6">
+			<div id="loading-center-absolute">
+				<div class="l-1 letter">L</div>
+				<div class="l-2 letter">o</div>
+				<div class="l-3 letter">a</div>
+				<div class="l-4 letter">d</div>
+				<div class="l-5 letter">i</div>
+				<div class="l-6 letter">n</div>
+				<div class="l-7 letter">g</div>
+				<div class="l-8 letter">.</div>
+				<div class="l-9 letter">.</div>
+				<div class="l-10 letter">.</div>
+			</div>
+		</div>
+	</div>
+	<!-- ENDIF -->
+<div class="body-search" onclick="Funsearchb()"></div>
+<!-- EVENT overall_header_body_before -->
+<div id="body-theme" class="body-theme page-wrapper chiller-theme toggled  demo-{SELECT_DEMO}">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+<!-- IF  SELECT_DEMO == 1 -->
+<!-- INCLUDE header_style_1.html -->
+<!-- ENDIF -->
+<!-- IF SELECT_DEMO == 3 or SELECT_DEMO == 2 -->
+<header <!-- IF SELECT_DEMO == 3 --> class="marg-header" <!-- ENDIF -->>
+<!-- IF  SELECT_DEMO == 2 -->
+	<!-- INCLUDE header_style_2.html -->
+<!-- ENDIF -->
+<!-- IF  SELECT_DEMO == 3 -->
+	<!-- INCLUDE header_style_3.html -->
+<!-- ENDIF -->
+</header>
+<!-- ENDIF -->
+
+<!-- IF not SELECT_DEMO  -->
+
+<!-- INCLUDE header_style_3.html -->
+
+
+<!-- ENDIF -->
+
+<!-- IF SELECT_DEMO == 3 and not SIDEBAR--> <!-- INCLUDE navbar_header.html --> <!-- ENDIF -->
+<a id="start_here" class="anchor"></a>
+<!-- IF SELECT_DEMO == 3 and SIDEBAR -->
+<div id="main-content" class="main  <!-- IF not POSITION_SIDEBAR -->right_sidebar<!-- ENDIF -->">
+	<div id="sidebar" class="sidebar">
+		<div class="sidebar__inner">
+			<div class="margin-fix">{ADS_SIDEBAR_CODE}</div>
+		</div>
+	</div>
+<div id="content" class="content">
+<!-- IF SELECT_DEMO == 3 --> <!-- INCLUDE navbar_header.html --> <!-- ENDIF -->
+<!-- ENDIF -->
+	<div id="page-body" class="page-body <!-- IF SELECT_DEMO == 3 -->navpad<!-- ELSE --> <!-- IF SELECT_DEMO == 2 and FIX_MENU and not POSITION_CRUMB -->margin-menu-body<!-- ENDIF --><!-- ENDIF --> " role="main">
+	<!-- IF SELECT_DEMO == 1 or SELECT_DEMO == 2 --> <!-- INCLUDE navbar_header.html --> <!-- ENDIF -->
+	<!-- IF  ADS_BOTTOM_HEADER == 'on' -->
+	<div class="ads ads-banner-header">{ADS_CODE}</div>
+	<!-- ENDIF -->
+		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+		<div id="information" class="rules">
+			<div class="inner">
+				<strong>{L_INFORMATION}{L_COLON}</strong> {L_BOARD_DISABLED}
+			</div>
+		</div>
+		<!-- ENDIF -->
+		<!-- EVENT overall_header_content_before -->
